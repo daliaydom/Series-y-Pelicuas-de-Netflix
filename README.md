@@ -1,4 +1,5 @@
 # Series-y-Pelicuas-de-Netflix 
+### Por: Dalia Yvette Domínguez Jiménez
 
 En este proyecto se utiliza la programación orientada a objetos en Java para crear objetos Peliculas y Series de Netflix, guardar sus caracteristicas, por mencionar algunas: titulo, creador, genero, entre otras; mostrar filmografíaque  ya fue visualizada, mostrar la información de la programación, calcular la pelicula más reciente y la serie con más temporadas.
 
@@ -66,3 +67,8 @@ toString() |
 esVisto() 
 tiempoVisto() |
 
+## Bibliografía:
+
+Este es el proyecto final del la segunda semana del curso de "Programando con Java para aplicaciones Android", impartido por la UNAM a través de Coursera, en la siguiente especialización:
+
+[Desarrollo de aplicaciones móviles con Android Specialization](https://www.coursera.org/specializations/programacion-android)
