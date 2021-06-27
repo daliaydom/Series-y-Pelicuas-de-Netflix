@@ -1,31 +1,70 @@
+import java.util.ArrayList;
 
 public class ejecutable {
 	
 
 	public static void main(String[] args) {
 		
-		// Crear un arreglo con peliculas
-		Pelicula[] peliculas = {new Pelicula("Pulp Fiction","Quentin Tarantino","Drama",178,1994),
-								new Pelicula("Inglourious Basterds","Quentin Tarantino"),
-								new Pelicula(),
-								new Pelicula("Fight Club","David Fincher"),
-								new Pelicula("Se7en", "David Fincher", "Suspenso", 127, 1995)};
+		// Crear un ArrayList con peliculas
+		ArrayList<Pelicula> peliculas = new ArrayList<Pelicula>();
 		
-		// Crear un arreglo con series
-		Serie[] series = {new Serie("American Horror Story","Ryan Murphy"),
-				          new Serie("Modern Family","Christopher Lloyd","Sitcom", 24,11),
-						  new Serie(),
-						  new Serie("How I Met Your Mother","Carter Bays","Sitcom", 22,9),
-						  new Serie()};
+		// Crear y agregar 5 peliculas en el ArrayList:
 		
-		// Marcar como visto algunas peliculas y series
-		peliculas[0].marcarVisto();
-		peliculas[1].marcarVisto();
-		peliculas[4].marcarVisto();
+		Pelicula peli1 = new Pelicula("Pulp Fiction", "Quentin Tarantino", "Suspenso", 127, 1995);
+		Pelicula peli2 = new Pelicula("Inglourious Basterds","Quentin Tarantino");
+		Pelicula peli3 = new Pelicula();
+		Pelicula peli4 = new Pelicula("Fight Club","David Fincher");
+		Pelicula peli5 = new Pelicula("Se7en", "David Fincher", "Suspenso", 127, 1995);
 		
-		series[0].marcarVisto();
-		series[3].marcarVisto();
+		peliculas.add(peli1);
+		peliculas.add(peli2);
+		peliculas.add(peli3);
+		peliculas.add(peli4);
+		peliculas.add(peli5);
 		
+		// Crear un ArrayList con series
+		ArrayList<Serie> series = new ArrayList<Serie>();
+		
+		// Crear y agregar 5 series en el ArrayList:
+		Serie serie1 = new Serie("American Horror Story","Ryan Murphy");
+		Serie serie2 = new Serie("Modern Family","Christopher Lloyd","Sitcom", 24,11);
+		Serie serie3 = new Serie();
+		Serie serie4 = new Serie("How I Met Your Mother","Carter Bays","Sitcom", 22,9);
+		Serie serie5 = new Serie();
+		
+		series.add(serie1);
+		series.add(serie2);
+		series.add(serie3);
+		series.add(serie4);
+		series.add(serie5);
+		
+		// Marcar como visto algunas peliculas 
+		int[] indexPelis = {0,1,5};
+		
+		try {
+			for(int i : indexPelis ) { 
+				peliculas.get(i).marcarVisto();
+			}
+		}catch(IndexOutOfBoundsException indexE){
+			System.out.println("Estás intentando entrar a una localidad no definida");
+			System.out.println("Ingresa de nuevo los indices de peliculas que marcas como visto");
+			System.out.println();
+		}
+		
+		// Marcar como visto algunas series
+		
+		int[ ] indexSeries = {0,3};
+		
+		try {
+			for(int i : indexSeries) {
+				series.get(i).marcarVisto();
+			}
+		}catch(IndexOutOfBoundsException indexE){
+			System.out.println("Estás intentando entrar a una localidad no definida");
+			System.out.println("Ingresa de nuevo los indices de series que marcas como visto");
+			System.out.println();
+		}
+
 		// Mostrar la lista de las peliculas vistas con los minutos visualizados
 		System.out.println("Las peliculas vistas son:");
 		
@@ -72,8 +111,8 @@ public class ejecutable {
 		
 	    System.out.println();
 	    
-		//Indicar la serie con m�s temporadas
-	    System.out.println("La serie con m�s temporadas es: ");
+		//Indicar la serie con más temporadas
+	    System.out.println("La serie con más temporadas es: ");
 	    
 	    //Calcular la serie con mayor numero de temporadas
 	    int currTemp = 0;
@@ -86,26 +125,26 @@ public class ejecutable {
 	    	}
 	    }
 	    
-	    // Mostrar en pantalla con toda su informaci�n
+	    // Mostrar en pantalla con toda su información
 	    System.out.println(serieMasLarga);
 	    
 	    System.out.println();
 	    
-	  //Indicar la pelicula m�s reciente
-	    System.out.print("La pelicula m�s reciente es: ");
+	  //Indicar la pelicula más reciente
+	    System.out.println("La pelicula más reciente es: ");
 	    
-	    //Calcular la pelicula m�s reciente
-	    int currA�o = 0;
+	    //Calcular la pelicula más reciente
+	    int currAño = 0;
 	    Pelicula peliMasReciente=null;
 	    for(Pelicula pelicula : peliculas) {
-	    	int a�o = pelicula.getA�o();
-	    	if(currA�o < a�o) {
+	    	int año = pelicula.getAño();
+	    	if(currAño < año) {
 	    		peliMasReciente = pelicula;
-	    		currA�o = a�o;
+	    		currAño = año;
 	    	}
 	    }
 	    
-	    // Mostrar en pantalla con toda su informaci�n
+	    // Mostrar en pantalla con toda su información
 	    System.out.println(peliMasReciente);
 	    
 	}
